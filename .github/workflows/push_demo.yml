@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # Runs a single command using the runners shell
-      - name: Updated File
-        run: |
-          echo "${{ github.event.inputs.name }}" 
+      # - name: Updated File
+      #   run: |
+      #     echo "${{ github.event.inputs.name }}" 
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Install Bats

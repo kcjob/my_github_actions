@@ -1,4 +1,4 @@
-#Display Nameof workflow
+#Display Name of workflow
 name: Basic Chaining Workflow
 
 on:
