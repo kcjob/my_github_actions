@@ -1,22 +1,30 @@
-name: Push Workflow Demo
-
+name: git push workflow
+run-name: ${{ github.actor }} is learning GitHub Actions
 on:
+
   push:
     branches:
       - PM-123
 
 jobs:
-  run-python-script:
+  check-bats-version:
     runs-on: ubuntu-latest
-    
+
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install Bats
+        run: sudo apt-get update && sudo apt-get install -y bats
+      - name: Check Bats version
+        run: bats -v
+
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Set up Python
         uses: actions/setup-python@v5 
         with:
-          python-version: '3.10'
+          python-version: '3.12.8'
       
       - name: Run Python script
         run: python test.py
