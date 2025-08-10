@@ -15,7 +15,7 @@ on:
 
   push:
     branches:
-      - push_action
+      - PM-123
 
 jobs:
   check-bats-version:
