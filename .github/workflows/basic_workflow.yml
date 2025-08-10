@@ -1,0 +1,49 @@
+# Basic workflow 
+# Manually triggered
+
+# Display name of workflow
+name: Basic Workflow 1
+
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Your Name'
+        # Default value if no value is explicitly provided
+        default: 'Joe Bloggs'
+        # Input has to be provided for the workflow to run
+        required: true
+        type: string
+      city:
+        description: "Work Location"
+        required: true
+        default: "Quincy"
+        type: choice
+        options:
+          - New York
+          - North Carolina
+          - Philadelphia
+          - Europe
+          - Asia
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "hello world"
+  Greetings:
+    # The name of the job, which will be displayed in the UI
+    name: Greetings Job
+    # The type of runner that the job will run on, in this case a Linus hosted runner
+    runs-on: 
+      - ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+        # Runs a single command using the runners shell
+        - name: Send greeting
+          run: |
+            echo "Hello ${{ github.event.inputs.name }}" 
+            echo "You are working from ${{ github.event.inputs.city }}"
+
+      
