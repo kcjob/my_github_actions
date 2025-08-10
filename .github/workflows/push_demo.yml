@@ -7,24 +7,24 @@ on:
       - PM-123
 
 jobs:
-  check-bats-version:
-    runs-on: ubuntu-latest
+  # check-bats-version:
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v4
 
-      - name: Install Bats
-        run: sudo apt-get update && sudo apt-get install -y bats
-      - name: Check Bats version
-        run: bats -v
+  #     - name: Install Bats
+  #       run: sudo apt-get update && sudo apt-get install -y bats
+  #     - name: Check Bats version
+  #       run: bats -v
 
   run-python-script:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5 
