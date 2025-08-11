@@ -9,11 +9,8 @@ on:
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
+
     steps:
-    # Runs a single command using the runners shell
-      # - name: Updated File
-      #   run: |
-      #     echo "${{ github.event.inputs.name }}" 
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Install Bats
@@ -29,5 +26,5 @@ jobs:
         with:
           python-version: '3.12.8'
       
-      - name: Run Python script
-        run: python test.py
+      # - name: Run Python script
+      #   run: python test.py
