@@ -1,1 +1,24 @@
+name: Pull Request Action
+
+on:
+  pull_request:
+    branches:
+      - main  # Target branch for the pull request
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.8'  # Specify your Python version
+
+      - name: Run Python script
+        run: python test.py
+
 
