@@ -6,10 +6,18 @@ on:
    - PM-123
 
 jobs:
- creat_pr
+ create_pr
   runs-on:
    - ubuntu-lasest
    steps:
-    uses: actions/checkout@v4
+    - name: Checkout code 
+      uses: actions/checkout@v4
 
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@V7
+      with:
+       commit-message: update authors
+       title: Update AUTHORS
+       body: Credit new contributors by updating AUTHORS
+       branch: update-authors
 
