@@ -1,9 +1,9 @@
-name:Crea from Feature to Main
+name:Create from Feature to Main
 
 on:
  push:
   branches:
-   -PM-123
+   - PM-123
 
 jobs:
  creat_pr
@@ -12,4 +12,4 @@ jobs:
    steps:
     uses: actions/checkout@v4
 
-    
+
