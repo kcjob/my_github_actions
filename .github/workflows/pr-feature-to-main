@@ -16,8 +16,8 @@ jobs:
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@V7
       with:
-       commit-message: update authors
-       title: Update AUTHORS
-       body: Credit new contributors by updating AUTHORS
-       branch: update-authors
+       commit-message: Added additional information
+       title: Update README
+       body: New info for README file
+       branch: main
 
