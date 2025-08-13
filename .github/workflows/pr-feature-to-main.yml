@@ -1,26 +1,27 @@
 name:Create from Feature to Main
 
+run-name: ${{ github.actor }} is learning GitHub Actions
 on:
- push:
-  branches:
-   - PM-123
 
+  push:
+    branches:
+      - PM-123
 jobs:
- create_pr
-  runs-on:
-   - ubuntu-lasest
-   steps:
-    - name: Checkout code 
-      uses: actions/checkout@v4
+  create_pr
+    runs-on: ubuntu-lasest
 
-    # - name: Create Pull Request
-    #   uses: peter-evans/create-pull-request@V7
-    #   with:
-    #    commit-message: Added additional information
-    #    title: Update README
-    #    body: New info for README file
-    #    branch: main
+    steps:
+      - name: Checkout code 
+        uses: actions/checkout@v4
 
-    - name: Output for Job 2
-      run: echo "Hello from Job 2"
+      # - name: Create Pull Request
+      #   uses: peter-evans/create-pull-request@V7
+      #   with:
+      #     commit-message: Added additional information
+      #     title: Update README
+      #      body: New info for README file
+      #      branch: main
+
+      - name: Output for Job 2
+        run: echo "Hello from Job 2"
 
