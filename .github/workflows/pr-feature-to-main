@@ -1,0 +1,15 @@
+name:Crea from Feature to Main
+
+on:
+ push:
+  branches:
+   -PM-123
+
+jobs:
+ creat_pr
+  runs-on:
+   - ubuntu-lasest
+   steps:
+    uses: actions/checkout@v4
+
+    
