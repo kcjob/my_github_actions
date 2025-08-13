@@ -1,4 +1,4 @@
-name:Create from Feature to Main
+name: Create from Feature to Main
 
 run-name: ${{ github.actor }} is learning GitHub Actions
 on:
@@ -7,8 +7,8 @@ on:
     branches:
       - PM-123
 jobs:
-  create_pr
-    runs-on: ubuntu-lasest
+  create_pr:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code 
