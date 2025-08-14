@@ -14,17 +14,29 @@ jobs:
       - name: Checkout code 
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          ref: master
+
+      - name: Get latest changes
+        run: |
+          git fetch origin PM-123:PM-123
+          git reset --hard PM-123
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7.0.8
         with:
           commit-message: Added additional information
-          title: Update README
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          signoff: false
+          branch: PM-123
+          title: 'Update README'
+          labels: |
+            Update
           body: New info for README file
-          branch: main
+          #: main
+          #assignees: kcjob
           reviewers: kcjob
 
-      - name: Output for Job 2
-        run: echo "Hello from Job 2"
+          draft: false
+
 
