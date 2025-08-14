@@ -13,9 +13,11 @@ jobs:
     steps:
       - name: Checkout code 
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@V7
+        uses: peter-evans/create-pull-request@v7.0.8
         with:
           commit-message: Added additional information
           title: Update README
