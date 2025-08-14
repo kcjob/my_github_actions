@@ -23,6 +23,7 @@ jobs:
           title: Update README
           body: New info for README file
           branch: main
+          reviewers: kcjob
 
       - name: Output for Job 2
         run: echo "Hello from Job 2"

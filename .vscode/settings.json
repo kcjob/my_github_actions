@@ -1,0 +1,15 @@
+{
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "files.watcherExclude": {
+    "**/node_modules/*": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree/**": true,
+    "**/tmp/**": true
+  },
+  "files.autoSave": "onFocusChange",
+  "editor.minimap.enabled": false,
+  "editor.smoothScrolling": false,
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.perEditorGroup": 10
+}
