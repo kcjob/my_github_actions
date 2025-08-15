@@ -40,3 +40,5 @@ jobs:
       #     draft: false
 
 
+      - name: Output for Job 2
+        run: echo "Hello from Job 2"
