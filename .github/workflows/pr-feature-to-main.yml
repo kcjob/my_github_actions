@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: Checkout code 
         uses: actions/checkout@v4
-      #   with:
-      #     ref: master
+        with:
+          ref: master
 
       # - name: Get latest changes
       #   run: |
