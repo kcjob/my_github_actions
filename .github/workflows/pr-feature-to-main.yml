@@ -16,9 +16,9 @@ jobs:
         with:
           ref: master
 
-      - name: Get latest changes
-        run: |
-          git fetch origin 
+      # - name: Get latest changes
+      #   run: |
+      #     git fetch origin PM-123
           # git reset --hard PM-123
 
       - name: Create Pull Request
@@ -36,7 +36,7 @@ jobs:
           body: New info for README file
           #: main
           #assignees: kcjob
-          reviewers: kcjob
+          reviewers: kcjob,chriskjob
 
           draft: false
 
