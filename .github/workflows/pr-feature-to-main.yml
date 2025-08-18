@@ -8,23 +8,18 @@ on:
       - PM-123
 
 jobs:
-  job-1:
-    name: Job 1
+  create_pr:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Output for Job 1
-      run: echo "Hello from Job 1. 
+      - name: Checkout code 
+        uses: actions/checkout@v4
+        with:
+          ref: PM-123
+          fetch-depth: 0
 
-
-# jobs:
-#   create_pr:
-#     runs-on: ubuntu-latest
-
-#     steps:
-      # - name: Checkout code 
-      #   uses: actions/checkout@v4
-      #   with:
-      #     ref: PM-123
+      - name: Output for Job 1
+        run: echo "Hello from Job 1"
 
       # - name: Get latest changes
       #   run: |
