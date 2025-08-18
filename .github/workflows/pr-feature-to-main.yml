@@ -13,29 +13,23 @@ jobs:
     steps:
       - name: Checkout code 
         uses: actions/checkout@v4
-      
-      - name: Install Bats
-        run: sudo apt-get update && sudo apt-get install -y bats
-      - name: Check Bats version
-        run: bats -v
+        with:
+          ref: PM-123
 
-        # with:
-        #   ref: PM-123
+      - name: Get latest changes
+        run: |
+          git fetch origin main:main
+          git reset --hard main
 
-      # - name: Get latest changes
-      #   run: |
-      #     git fetch origin PM-123
-          # git reset --hard PM-123
-
-      # - name: Create Pull Request
-      #   uses: peter-evans/create-pull-request@v7.0.8
-      #   with:
-      #     commit-message: Added additional information
-      #     committer: GitHub <noreply@github.com>
-      #     author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-      #     signoff: false
-      #     branch: main
-      #     base: PM-123
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7.0.8
+        with:
+          commit-message: Added additional information
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          signoff: false
+          branch: main
+          base: PM-123
       #     title: 'Update README'
       #     labels: |
       #       Update
