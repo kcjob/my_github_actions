@@ -18,8 +18,8 @@ jobs:
 
       - name: Get latest changes
         run: |
-          git fetch origin PM-123:PM-123
-          git reset --hard PM-123
+          git fetch origin 
+          # git reset --hard PM-123
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7.0.8
