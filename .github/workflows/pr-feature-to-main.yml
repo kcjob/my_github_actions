@@ -28,7 +28,8 @@ jobs:
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
-          branch: PM-123
+          branch: main
+          base: PM-123
           title: 'Update README'
           labels: |
             Update
