@@ -6,20 +6,30 @@ on:
   push:
     branches:
       - PM-123
+
 jobs:
-  create_pr:
+  job-1:
+    name: Job 1
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code 
-        uses: actions/checkout@v4
-        with:
-          ref: PM-123
+    - name: Output for Job 1
+      run: echo "Hello from Job 1. 
 
-      - name: Get latest changes
-        run: |
-          git fetch origin PM-123:PM-123
-          git reset --hard PM-123
+
+# jobs:
+#   create_pr:
+#     runs-on: ubuntu-latest
+
+#     steps:
+      # - name: Checkout code 
+      #   uses: actions/checkout@v4
+      #   with:
+      #     ref: PM-123
+
+      # - name: Get latest changes
+      #   run: |
+      #     git fetch origin PM-123:PM-123
+      #     git reset --hard PM-123
 
       # - name: Create Pull Request
       #   uses: peter-evans/create-pull-request@v7.0.8
